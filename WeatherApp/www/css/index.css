@@ -1,0 +1,47 @@
+.hidden {
+    display: none;
+}
+
+.theader{
+    height: 40px;
+    
+}
+#app-title{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#start-icon{
+    height:40px;
+position: relative !important;
+
+}
+.footer{
+    font-size: 12px;
+    text-align: center;
+}
+
+form {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+#zip-code-input {
+    font-size: 25px;
+    width:100%;
+}
+
+#download-data-btn {
+    font-size: 16px;
+}
+
+
+
+
+#error-msg {
+    text-align: center;
+    margin-top:  50%;
+    font-weight: bold;    
+}
+

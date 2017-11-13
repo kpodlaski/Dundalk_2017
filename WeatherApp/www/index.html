@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self' data: gap: http://api.openweathermap.org https://ssl.gstatic.com  'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src * data: ">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="css/jquery.mobile-1.4.5.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+    <title>Weather App</title>
+</head>
+<body>
+    <div data-role="page" id="weather-page" >
+        <div data-role="header" class="header ui-bar-a">
+            <div id="app-title" class="theader"> Weather </div>             
+        </div>
+
+        <div role="main" class="ui-content">
+            <form>
+                <label for="zip-code">Zip Code:</label>
+                <input id="zip-code-input" name="zip-code-input"  placeholder="90-236" class="ui-corner-all" required />
+                <button id="download-data-btn" data-role="button" class="ui-btn ui-btn-corner-all ui-icon-search ">Show Weather</button>
+                <button id="weather-gps-btn" data-role="button" class="ui-btn ui-btn-corner-all ui-icon-search ">Weather (GPS)</button>
+            </form>
+            <div id="weather-data" name="weather-data" class="ui-corner-all ui-shadow hidden">
+                <span id="name" class="ui-bar ui-bar-a "></span>
+                <table>
+                    <tr>
+                        <td>
+                            <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ">
+                                <li>Temp:<span id="temp"></span> C <img src="" /></li>
+                                <li>Pressure: <span id="pressure"></span>hPa</li>
+                                <li>Wind: <span id="wind"></span> km/h</li>
+                                <li>Humidity: <span id="humidity"></span> %</li>
+                                <li>Sunrise: <span id="srise"></span></li>
+                                <li>Sunset: <span id="sset"></span></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <span><img src="" id="weather-icon" name="weather-icon" /> </span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="error-msg" class="hidden"></div>
+        </div>
+
+        <footer class="footer" data-role="footer" data-position="fixed" >
+            <h4><a href="http:\\www.wfis.uni.lodz.pl">WFiIS UŁ</a></h4>
+        </footer>
+
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/jquery-3.1.1.min.js"></script>
+
+    <script type="text/javascript" src="scripts/weather.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+
+
+</body>
+</html>
